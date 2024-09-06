@@ -1,0 +1,45 @@
+.form
+{
+    margin: auto;
+    margin-top: 55px;
+    width: 70%;
+    height: 350px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 150px 150px 0px;
+}
+
+.form-group label 
+{
+    margin-right: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form-group input 
+{
+    padding-left: 0.3rem;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+    height: 2.2rem;
+}
+
+.btn
+{
+    background-color: black;
+    margin-top: 18px;
+    font-size: 16px;
+    padding: 10px;
+    color: white;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.btn:hover
+{
+    filter: invert(1);
+}
