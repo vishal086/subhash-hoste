@@ -36,7 +36,7 @@ function Contact() {
   const handleSubmit = async(e) =>{
 
     try {
-      const res = await axios.post('http://localhost:8000/complaint',data)
+      const res = await axios.post('https://subhash-hoste-backend.onrender.com/complaint',data)
       if(res)
       toast.success('Complaint Submitted successfully!');
     } catch(err) {

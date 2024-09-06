@@ -22,14 +22,14 @@ function Contact() {
 
 
     try {
-      const res = await axios.post('http://localhost:8000/contact', data);
+      const res = await axios.post('https://subhash-hoste-backend.onrender.com/contact', data);
       // Show success toast
       toast.success('Message Send');
     } catch (error) {
       // Show error toast
       toast.error('Try After Sometime');
     }
-
+ 
   } 
   return (
     <>
