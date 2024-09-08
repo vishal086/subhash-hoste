@@ -30,14 +30,12 @@ function Contact() {
      e.preventDefault();
     try {
       setLoading(true)
-      const res = await axios.post('http://localhost:8000/contact', data);
+      const res = await axios.post('https://subhash-hoste-backend.onrender.com/contact', data);
       // Show success toast
-      if(res.data.success)
-      {
+    
         toast.success("Message Submitted Successfully");
         navigate('/')
         
-      }
     } catch (error) { 
       // Show error toast
       toast.error('Try After Sometime');

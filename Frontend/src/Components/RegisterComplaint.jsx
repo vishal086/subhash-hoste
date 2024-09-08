@@ -21,14 +21,14 @@ function Contact() {
     },
     email : "",
     message : ""
-  })
-
+  }) 
+ 
     const handleCheckboxChange = (e) => {
     const { name, checked } = e.target;
     setData({
       ...data,
       complaints: { ...data.complaints, [name]: checked }
-    });
+    }); 
 
     };
   const handleForm = (e) => {
@@ -43,8 +43,7 @@ function Contact() {
      setLoading(true);
       e.preventDefault()
     try {
-      const res = await axios.post('http://localhost:8000/complaint',data)
-      if(res)
+      const res = await axios.post('https://subhash-hoste-backend.onrender.com/complaint',data)
       toast.success('Complaint Submitted successfully!');
       navigate('/')
     } catch(err) {
