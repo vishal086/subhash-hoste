@@ -44,10 +44,10 @@ function Contact() {
       e.preventDefault()
     try {
       const res = await axios.post('https://subhash-hoste-backend.onrender.com/complaint',data)
-      toast.success('Complaint Submitted successfully!');
+      toast.success(res.data.message);
       navigate('/')
     } catch(err) {
-      toast.error('Failed to submit complaint. Please try again.'); 
+      toast.error('Failed to Submit Complaint. Please try again.'); 
       navigate('/')
     } 
     finally{

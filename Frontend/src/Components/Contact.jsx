@@ -33,12 +33,12 @@ function Contact() {
       const res = await axios.post('https://subhash-hoste-backend.onrender.com/contact', data);
       // Show success toast
     
-        toast.success("Message Submitted Successfully");
+        toast.success(res.data.message);
         navigate('/')
         
     } catch (error) { 
       // Show error toast
-      toast.error('Try After Sometime');
+      toast.error('Failed to Submit Message. Please try again.');
       navigate('/')
     }
     finally {
