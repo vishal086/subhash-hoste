@@ -53,7 +53,7 @@ function Contact() {
     finally{
       setLoading(false);
     }
-  } 
+  }  
   return (  
     <>
       <form className="form" id="contact" onSubmit={handleSubmit}>
