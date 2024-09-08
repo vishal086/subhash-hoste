@@ -39,6 +39,7 @@ function Contact() {
     } catch (error) { 
       // Show error toast
       toast.error('Try After Sometime');
+      navigate('/')
     }
     finally {
       setLoading(false)

@@ -8,7 +8,14 @@ const app = express()
 
 app.use(express.json())
 
-app.use(cors())
+// app.use(cors())
+
+app.use(cors({
+    origin: true,  // Replace this with the actual frontend origin
+    credentials: true,  // Enable credentials if you're passing cookies or auth headers
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.use(bodyParser.json())
 
 

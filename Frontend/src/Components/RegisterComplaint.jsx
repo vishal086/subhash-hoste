@@ -48,12 +48,13 @@ function Contact() {
       navigate('/')
     } catch(err) {
       toast.error('Failed to submit complaint. Please try again.');
+      navigate('/')
     } 
     finally{
       setLoading(false);
     }
   } 
-  return (
+  return (  
     <>
       <form className="form" id="contact" onSubmit={handleSubmit}>
         <div action="" className="form-input">
