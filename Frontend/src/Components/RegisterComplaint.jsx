@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import "../Style/RegisterComplaint.css";
 import axios from 'axios'
+import {toast} from 'sonner'
+import { useNavigate } from "react-router-dom";
+import {Loader2} from 'lucide-react'
 function Contact() {
+  
+  const[loading,setLoading] = useState(false);
+  const navigate = useNavigate();
   const [data,setData] = useState({
     name : "",
     roll : "",
@@ -34,14 +40,19 @@ function Contact() {
   }
   console.log(data)
   const handleSubmit = async(e) =>{
-
+     setLoading(true);
+      e.preventDefault()
     try {
-      const res = await axios.post('https://subhash-hoste-backend.onrender.com/complaint',data)
+      const res = await axios.post('http://localhost:8000/complaint',data)
       if(res)
       toast.success('Complaint Submitted successfully!');
+      navigate('/')
     } catch(err) {
       toast.error('Failed to submit complaint. Please try again.');
     } 
+    finally{
+      setLoading(false);
+    }
   } 
   return (
     <>
@@ -108,7 +119,9 @@ function Contact() {
         </div>
 
           <div className="form-btn">
-              <input type="submit" className="btn"/>
+              {
+                loading?<button className="btn"><Loader2 className="vishal"/>Please wait</button>: <button type="submit" className="btn">Submit</button>
+              }
         </div>
       </form>
 

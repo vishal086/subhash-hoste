@@ -23,7 +23,7 @@ app.get('/',(req,res)=>{
 
 app.post('/complaint',(req,res)=>{
     const data = Register.create(req.body)
-    res.status(201).json({
+    return res.status(201).json({
         success:true,
         message : "Data send",
         data
@@ -31,9 +31,9 @@ app.post('/complaint',(req,res)=>{
     console.log(req.body)
 
 })
-app.post('/contact',(req,res)=>{
+app.post('/contact',(req,res)=>{ 
     const data = Contact.create(req.body)
-    res.status(201).json({ 
+    return res.status(201).json({ 
         success:true,
         message : "Data send",
         data

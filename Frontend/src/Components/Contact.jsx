@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import "../Style/Contact.css";
 import axios from 'axios'
-import {toast} from 'react-toastify'
+import {toast} from 'sonner'
+import { useNavigate } from "react-router-dom";
+import {Loader2} from 'lucide-react'
 function Contact() {
+
+  const[loading,setLoading] = useState(false);
+
+  const navigate = useNavigate();
   const [data,setData] = useState({
     name : "",
     email : "",
@@ -21,13 +27,23 @@ function Contact() {
     // const res = await axios.post('http://localhost:8000/contact',data);
 
 
+     e.preventDefault();
     try {
-      const res = await axios.post('https://subhash-hoste-backend.onrender.com/contact', data);
+      setLoading(true)
+      const res = await axios.post('http://localhost:8000/contact', data);
       // Show success toast
-      toast.success('Message Send');
-    } catch (error) {
+      if(res.data.success)
+      {
+        toast.success("Message Submitted Successfully");
+        navigate('/')
+        
+      }
+    } catch (error) { 
       // Show error toast
       toast.error('Try After Sometime');
+    }
+    finally {
+      setLoading(false)
     }
  
   } 
@@ -63,7 +79,9 @@ function Contact() {
         </div>
 
           <div className="form-btn">
-              <input type="submit" className="btn"/>
+          {
+              loading?<button className="btn"><Loader2 className="vishal"/>Please wait</button>: <button type="submit" className="btn">Submit</button>
+              }
         </div>
       </form>
     </>
