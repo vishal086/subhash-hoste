@@ -29,42 +29,24 @@ app.get('/',(req,res)=>{
 
 
 app.post('/complaint',(req,res)=>{
-    const {name,roll_no,room,email,message} = req.body;
-    if(!name || !roll_no || !room || !email || !message)
-    {
-        return res.status(401).json({
-            success : false,
-            message : "All Field are Required",
-          })
-    }
-    else
-    {
-        const data = Register.create(req.body)
-        return res.status(201).json({ 
-            success:true,
-            message : "Complaint Registerd Successfully",
-            data
-        })
-    }
+    const data = Register.create(req.body)
+    return res.status(201).json({
+        success:true,
+        message : "Data send",
+        data
+    })
+    console.log(req.body)
+
 })
 app.post('/contact',(req,res)=>{ 
-    const {name,email,message} = req.body;
-    if(!name || !email || !message)
-    {
-        return res.status(401).json({
-            success : false,
-            message : "All Field are Requierd"
-          })
-    }
-   else
-   {
     const data = Contact.create(req.body)
     return res.status(201).json({ 
         success:true,
-        message : "Message Submitted Successfully",
+        message : "Data send",
         data
     })
-   }
+    console.log(req.body)
+
 })
 app.listen(8000,()=>{
     console.log("Server is Running")

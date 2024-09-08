@@ -5,7 +5,7 @@ import Home from './Components/Home'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
 import Contact from './Components/Contact'
-import Services from './Components/Services' 
+import Services from './Components/Services'
 import RegisterComplaint from './Components/RegisterComplaint'
 
 function App() {
