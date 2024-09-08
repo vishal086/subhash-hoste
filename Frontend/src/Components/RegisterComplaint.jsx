@@ -47,7 +47,7 @@ function Contact() {
       toast.success('Complaint Submitted successfully!');
       navigate('/')
     } catch(err) {
-      toast.error('Failed to submit complaint. Please try again.');
+      toast.error('Failed to submit complaint. Please try again.'); 
       navigate('/')
     } 
     finally{
