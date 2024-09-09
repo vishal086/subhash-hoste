@@ -2,6 +2,10 @@ import React from "react";
 import "../Style/Home.css";
 import vg from "../Images/2.webp";
 import Services from './Services'
+import img1 from '../Images/CM-G.png'
+import img2 from '../Images/Chancellor.png'
+import img3 from '../Images/VC2.png'
+import img4 from '../Images/ShriAshishPatel.png'
 import {
   AiFillGoogleCircle,
   AiFillInstagram,
@@ -43,44 +47,25 @@ function Home() {
 
       <div className="home4-main" id="brands">
         <div className="home4">
-          <h1>Brands</h1>
+          <h1>MMMUT</h1>
 
           <div className="icon">
-            <div
-              style={{
-                animationDelay: "0.3s",
-              }}
-            >
-              <AiFillGoogleCircle />
-              <p>Google</p>
+            <div className="img1">
+          
             </div>
 
-            <div
-              style={{
-                animationDelay: "0.5s",
-              }}
-            >
-              <AiFillAmazonCircle />
-              <p>Amazon</p>
+            <div className="img2">
+     
             </div>
 
-            <div
-              style={{
-                animationDelay: "0.7s",
-              }}
-            >
-              <AiFillYoutube />
-              <p>Youtube</p>
+            <div className="img3">
+         
             </div>
 
-            <div
-              style={{
-                animationDelay: "0.9s",
-              }}
-            >
-              <AiFillInstagram />
-              <p>Instagram</p>
+            <div className="img4">
+              
             </div>
+
           </div>
         </div>
       </div>
