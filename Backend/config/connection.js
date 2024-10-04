@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 // const URI = "mongodb+srv://vishalkumar03072001:BIe3wUY7b073jkkD@cluster0.4mqrp.mongodb.net/Subhash?retryWrites=true&w=majority&appName=Cluster0"
 
 
-const URI = "mongodb+srv://hsrsrr371:CHAz4cgnZ0zsJHdK@cluster0.eo543.mongodb.net/Subhash-Hostel?retryWrites=true&w=majority&appName=Cluster0"
+const URI = "mongodb+srv://anupamorsahu:bFdIYHBkGpTEH9LG@cluster0.wyejw.mongodb.net/Subhash-Hostel?retryWrites=true&w=majority&appName=Cluster0"
 const connectDB = async() =>{
     try {
         mongoose.connect(URI)
